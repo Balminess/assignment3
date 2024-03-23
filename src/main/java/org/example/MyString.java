@@ -24,7 +24,17 @@ public class MyString {
     };
 
     public String replace(String s, String s1, String s2) {
-        return "";
+
+        int index = 0;
+
+        // Find the index of the first occurrence of s1 in s
+        int startIndex = indexOfString(s,s1,index);
+
+
+        String prefix= s.substring(index, startIndex);
+        String suffix= s.substring(startIndex + s1.length());
+        // concatenating the substrings of s with s2
+        return prefix + s2 + suffix;
     }
 
 }

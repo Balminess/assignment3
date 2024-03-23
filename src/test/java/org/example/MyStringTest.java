@@ -27,7 +27,7 @@ public class MyStringTest  {
     public void testReplace() {
         MyString myString = new MyString();
         String result = myString.replace("abcdabcd", "bc", "e");
-        assertEquals("aedabcd", result); //aedabcd
+        assertEquals("aedabcd", result);
 
 
     }
