@@ -34,3 +34,7 @@ jobs:
 
     - name: Run unit tests
       run: mvn test clean
+      
+    - name: Generate reports when coverage requirements are met at compile time
+      run: mvn clean test-compile org.pitest:pitest-maven:mutationCoverage -DcoverageThreshold=95 -DmutationThreshold=95
+
