@@ -9,6 +9,7 @@ public class MyStringTest  {
         MyString myString = new MyString();
         int result = myString.indexOfString("abcdabad","a",0);
         assertEquals(0,result);
-
+        result = myString.indexOfString("abcdabad","a",1);
+        assertEquals(4,result);
     }
 }
