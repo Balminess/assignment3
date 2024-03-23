@@ -25,16 +25,20 @@ public class MyString {
 
     public String replace(String s, String s1, String s2) {
 
+        // Initialize the starting index
         int index = 0;
-
-        // Find the index of the first occurrence of s1 in s
-        int startIndex = indexOfString(s,s1,index);
-
-
-        String prefix= s.substring(index, startIndex);
-        String suffix= s.substring(startIndex + s1.length());
-        // concatenating the substrings of s with s2
-        return prefix + s2 + suffix;
+        StringBuilder result= new StringBuilder();
+        // Find the index of the first occurrence of s1 starting from the current position
+        int startIndex = indexOfString(s,s1, index);
+        // Concatenate the substrings
+        while (startIndex != -1) {
+            result.append(s, index, startIndex).append(s2);
+            // Move the index after the occurrence of s1
+            index = startIndex + s1.length();
+            // Find the next occurrence of s1
+            startIndex = indexOfString(s,s1, index);
+        }
+        // Concatenate the remaining substring
+        return result.append(s.substring(index)).toString();
+        }
     }
-
-}
