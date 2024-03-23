@@ -26,8 +26,11 @@ public class MyStringTest  {
     @Test
     public void testReplace() {
         MyString myString = new MyString();
-        String result = myString.replace("abcdabcd", "bc", "e");
-        assertEquals("aedabcd", result);
+
+        String result = myString.replace("abcdad", "bc", "e");
+        assertEquals("aedad", result);
+        result = myString.replace("abcdabcd", "bc", "e");
+        assertEquals("aedaed", result);
 
 
     }
