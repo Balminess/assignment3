@@ -25,6 +25,10 @@ public class MyString {
 
     public String replace(String s, String s1, String s2) {
 
+        // Check if any of the strings is null
+        if (s == null || s1 == null || s2 == null)
+            return null;
+
         // Initialize the starting index
         int index = 0;
         StringBuilder result= new StringBuilder();
