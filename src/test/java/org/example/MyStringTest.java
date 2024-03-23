@@ -1,6 +1,7 @@
 package org.example;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class MyStringTest  {
     @Test
@@ -32,6 +33,12 @@ public class MyStringTest  {
         result = myString.replace("abcdabcd", "bc", "e");
         assertEquals("aedaed", result);
 
+        result =myString.replace(null,"bcd","cde");
+        assertNull(result);
+        result = myString.replace("abc",null,"cde");
+        assertNull(result);
+        result = myString.replace("abc","bcd",null);
+        assertNull(result);
 
     }
 
