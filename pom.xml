@@ -25,6 +25,8 @@
                     <targetTests>
                         <param>org.example.MyStringTest</param>
                     </targetTests>
+                    <coverageThreshold>95</coverageThreshold>
+                    <coverageThreshold>95</coverageThreshold>
                 </configuration>
             </plugin>
         </plugins>
