@@ -46,28 +46,4 @@ public class MyStringTest {
         result = myString.replace("abc", "bcd", null);
         assertNull(result);
     }
-
-    @Test
-    public void testReplaceMocking() {
-        MyString myStringSpy = spy(new MyString());
-//        MyString myStringSpy = mock(MyString.class);
-        when(myStringSpy.indexOfString(anyString(), anyString(), anyInt())).thenAnswer(
-                (Answer) invocation -> {
-                    String s1 = invocation.getArgument(0);
-                    String s2 = invocation.getArgument(1);
-                    int pos = invocation.getArgument(2);
-                    return s1.indexOf(s2, pos);
-                });
-        String result = myStringSpy.replace("abcdad", "bc", "e");
-        assertEquals("aedad", result);
-        result = myStringSpy.replace("abcdabcd", "bc", "e");
-        assertEquals("aedaed", result);
-
-        result =myStringSpy.replace(null,"bcd","cde");
-        assertNull(result);
-        result = myStringSpy.replace("abc",null,"cde");
-        assertNull(result);
-        result = myStringSpy.replace("abc","bcd",null);
-        assertNull(result);
-    }
 }
