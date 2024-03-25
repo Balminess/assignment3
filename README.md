@@ -24,7 +24,7 @@ mvn exec:java
 ```
 mvn test 
 ```
-5. the mutant coverage report can found in target/pit-reports and you can confiure the converage threshold with following commend:
+5. You can confiure the converage threshold with following commend to get the coverage report, then go to target/pit-reports to see it:
 
 ```
 mvn clean test-compile org.pitest:pitest-maven:mutationCoverage -DcoverageThreshold=<default:95> -DmutationThreshold=<default:95> 
