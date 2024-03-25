@@ -29,5 +29,8 @@ mvn test
 ```
 mvn clean test-compile org.pitest:pitest-maven:mutationCoverage -DcoverageThreshold=<default:95> -DmutationThreshold=<default:95> 
 ```
+## Coverage
+The line converage of Mystring is 100% and  mutant converage is 95%.
+![image](pit.png)
 
 
